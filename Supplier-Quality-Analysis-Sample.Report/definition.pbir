@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Supplier-Quality-Analysis-Sample.Dataset"
+    },
+    "byConnection": null
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "config": "{\"version\":\"5.42\",\"themeCollection\":{},\"activeSectionIndex\":1,\"linguisticSchemaSyncVersion\":2}",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "ReportSection1",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod"
+    },
+    {
+      "boundSection": "ReportSection4",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "Pod1"
+    }
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "power-bi-obvience-splash19119879230856895.png",
+            "path": "power-bi-obvience-splash19119879230856895.png",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Top Bottom Analysis",
+      "displayOption": 0,
+      "filters": "[{\"name\":\"Filter\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Vendor\"}},\"Property\":\"Vendor\"}},\"type\":\"Categorical\",\"howCreated\":1,\"isLinkedAsAggregation\":false},{\"name\":\"Filter1\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Defect Type\"}},\"Property\":\"Defect Type\"}},\"type\":\"Categorical\",\"howCreated\":1,\"isLinkedAsAggregation\":false},{\"name\":\"Filter2\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Defect\"}},\"Property\":\"Defect\"}},\"type\":\"Categorical\",\"howCreated\":1,\"isLinkedAsAggregation\":false},{\"name\":\"Filter3\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Date\"}},\"Property\":\"Year\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d2\",\"Entity\":\"Date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d2\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"'2014'\"}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"isLinkedAsAggregation\":false}]",
+      "height": 720.00,
+      "name": "ReportSection",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"VisualContainer\",\"layouts\":[{\"id\":0,\"position\":{\"x\":26.506602641056425,\"y\":9.96923076923077,\"z\":0,\"width\":469.0516206482593,\"height\":68.67692307692307}}],\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Top/Bottom Analysis\",\"textStyle\":{\"fontFamily\":\"Heading\",\"fontSize\":\"28pt\",\"fontStyle\":\"normal\",\"fontWeight\":\"normal\"}}],\"horizontalTextAlignment\":\"left\"}]}}]}}}",
+          "height": 68.68,
+          "width": 469.05,
+          "x": 26.51,
+          "y": 9.97,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":579.68787515006,\"y\":27.692307692307693,\"z\":1000,\"width\":357.26290516206484,\"height\":665.7230769230769}}],\"singleVisual\":{\"visualType\":\"table\",\"projections\":{\"Values\":[{\"queryRef\":\"select\"},{\"queryRef\":\"select1\"},{\"queryRef\":\"select2\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Vendor\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Vendor\"},\"Name\":\"select\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Defect Qty\"},\"Name\":\"select1\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Downtime Minutes\"},\"Name\":\"select2\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Defect Qty\"}}}]},\"objects\":{\"general\":[{\"properties\":{\"totals\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{\"columnWidth\":{\"expr\":{\"Literal\":{\"Value\":\"78D\"}}}},\"selector\":{\"metadata\":\"select1\"}},{\"properties\":{\"columnWidth\":{\"expr\":{\"Literal\":{\"Value\":\"103D\"}}}},\"selector\":{\"metadata\":\"select2\"}}],\"columnHeaders\":[{\"properties\":{\"wordWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "height": 665.72,
+          "width": 357.26,
+          "x": 579.69,
+          "y": 27.69,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":217.81512605042016,\"y\":114.09230769230768,\"z\":2000,\"width\":357.26290516206484,\"height\":584.8615384615384}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"select\",\"active\":true},{\"queryRef\":\"select1\"}],\"Series\":[{\"queryRef\":\"select2\"}],\"Y\":[{\"queryRef\":\"select3\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Material Type\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Defect\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"Defect Type\",\"Type\":0},{\"Name\":\"m1\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Material Type\"},\"Name\":\"select\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Defect\"},\"Name\":\"select1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Defect Type\"},\"Name\":\"select2\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m1\"}},\"Property\":\"Total Defect Qty\"},\"Name\":\"select3\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m1\"}},\"Property\":\"Total Defect Qty\"}}},{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m1\"}},\"Property\":\"Total Defect Qty\"}}}]},\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}},\"concatenateLabels\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"legend\":[{\"properties\":{\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "height": 584.86,
+          "width": 357.26,
+          "x": 217.82,
+          "y": 114.09,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":822.9885057471265,\"y\":678.7561374795417,\"z\":3000,\"width\":140.6896551724138,\"height\":40.06546644844517}}],\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"obviEnce llc ©\",\"textStyle\":{\"fontFamily\":\"Lucida Sans Unicode\",\"fontSize\":\"8pt\",\"fontStyle\":\"normal\",\"fontWeight\":\"normal\"}}],\"horizontalTextAlignment\":\"right\"}]}}]}}}",
+          "height": 40.07,
+          "width": 140.69,
+          "x": 822.99,
+          "y": 678.76,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":74.90996398559425,\"y\":393.2307692307692,\"z\":4000,\"width\":127.92316926770708,\"height\":167.26153846153846}}],\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Double-tap the bars at the right to drill down. To drill up, right-click the chart and tap the up arrow.\",\"textStyle\":{\"fontSize\":\"9pt\"}}]}]}}]}}}",
+          "height": 167.26,
+          "width": 127.92,
+          "x": 74.91,
+          "y": 393.23,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":35,\"y\":94,\"z\":5000,\"width\":172,\"height\":245}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"select\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Category\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Category\"},\"Name\":\"select\"}]},\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}]}}}",
+          "height": 245.00,
+          "width": 172.00,
+          "x": 35.00,
+          "y": 94.00,
+          "z": 5000.00
+        }
+      ],
+      "width": 960.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Info",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection1",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"VisualContainer\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.743405275779375,\"y\":19.952038369304557,\"z\":0,\"width\":1266.1870503597122,\"height\":698.5131894484412}}],\"singleVisual\":{\"visualType\":\"image\",\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"power-bi-obvience-splash19119879230856895.png\"}}}}}]}}}",
+          "height": 698.51,
+          "width": 1266.19,
+          "x": 10.74,
+          "y": 19.95,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":72.66375545851528,\"y\":252.92576419213975,\"z\":1000,\"width\":300.4366812227074,\"height\":46.11353711790393}}],\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"http://obvience.com\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"15pt\",\"textDecoration\":\"underline\",\"color\":\"#01b8aa\"},\"url\":\"http://obvience.com\"}]}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#000000'\"}}}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}}}",
+          "height": 46.11,
+          "width": 300.44,
+          "x": 72.66,
+          "y": 252.93,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Supplier Quality ",
+      "displayOption": 0,
+      "filters": "[{\"name\":\"Filter\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Material Type\"}},\"Property\":\"Material Type\"}},\"type\":\"Categorical\",\"howCreated\":1,\"isLinkedAsAggregation\":false},{\"name\":\"Filter1\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Plant\"}},\"Property\":\"Plant\"}},\"type\":\"Categorical\",\"howCreated\":1,\"isLinkedAsAggregation\":false},{\"name\":\"Filter2\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Defect Type\"}},\"Property\":\"Defect Type\"}},\"type\":\"Categorical\",\"howCreated\":1,\"isLinkedAsAggregation\":false},{\"name\":\"Filter3\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Date\"}},\"Property\":\"Year\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d1\",\"Entity\":\"Date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Or\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"'2013'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"'2014'\"}}}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"isLinkedAsAggregation\":false}]",
+      "height": 720.00,
+      "name": "ReportSection2",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"VisualContainer\",\"layouts\":[{\"id\":0,\"position\":{\"x\":27.65906362545018,\"y\":6.646153846153846,\"z\":1000,\"width\":477.11884753901563,\"height\":69.78461538461538}}],\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Supplier Quality Analysis\",\"textStyle\":{\"fontFamily\":\"Heading\",\"fontSize\":\"28pt\",\"fontStyle\":\"normal\",\"fontWeight\":\"normal\"}}],\"horizontalTextAlignment\":\"left\"}]}}]}}}",
+          "height": 69.78,
+          "width": 477.12,
+          "x": 27.66,
+          "y": 6.65,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":557.7911164465786,\"y\":248.12307692307692,\"z\":7000,\"width\":403.3613445378151,\"height\":288}}],\"singleVisual\":{\"visualType\":\"map\",\"projections\":{\"Category\":[{\"queryRef\":\"select\",\"active\":true}],\"Series\":[{\"queryRef\":\"select1\"}],\"Size\":[{\"queryRef\":\"select2\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Plant\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Defect Type\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Plant\"},\"Name\":\"select\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Defect Type\"},\"Name\":\"select1\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Defect Reports\"},\"Name\":\"select2\"}]},\"objects\":{\"legend\":[{\"properties\":{\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'Bottom'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"dataPoint\":[]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "height": 288.00,
+          "width": 403.36,
+          "x": 557.79,
+          "y": 248.12,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":29.963985594237695,\"y\":520.6153846153846,\"z\":3000,\"width\":909.2917166866747,\"height\":180.55384615384614}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"select\",\"active\":true}],\"Series\":[{\"queryRef\":\"select1\"}],\"Y\":[{\"queryRef\":\"select2\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Material Type\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Defect Type\",\"Type\":0},{\"Name\":\"m1\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Material Type\"},\"Name\":\"select\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Defect Type\"},\"Name\":\"select1\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m1\"}},\"Property\":\"Total Defect Qty\"},\"Name\":\"select2\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m1\"}},\"Property\":\"Total Defect Qty\"}}}]},\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"legend\":[{\"properties\":{\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'Bottom'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "height": 180.55,
+          "width": 909.29,
+          "x": 29.96,
+          "y": 520.62,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":155.58223289315725,\"y\":273.6,\"z\":2000,\"width\":390.6842737094838,\"height\":255.87692307692308}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"Category\":[{\"queryRef\":\"select\",\"active\":true},{\"queryRef\":\"select1\"}],\"Y\":[{\"queryRef\":\"select2\"}],\"X\":[{\"queryRef\":\"select3\",\"active\":true}],\"Size\":[{\"queryRef\":\"select4\"}],\"Series\":[{\"queryRef\":\"select\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Category\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Defect Type\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Category\"},\"Name\":\"select\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Defect Type\"},\"Name\":\"select1\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Defect Reports\"},\"Name\":\"select2\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Defect Qty\"},\"Name\":\"select3\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Downtime Minutes\"},\"Name\":\"select4\"}]},\"objects\":{\"categoryAxis\":[{\"properties\":{}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "height": 255.88,
+          "width": 390.68,
+          "x": 155.58,
+          "y": 273.60,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":481.72869147659065,\"y\":15.507692307692308,\"z\":4000,\"width\":452.9171668667467,\"height\":212.67692307692306}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"select\",\"active\":true}],\"Series\":[{\"queryRef\":\"select1\"}],\"Y\":[{\"queryRef\":\"select2\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month\"},\"Name\":\"select\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Year\"},\"Name\":\"select1\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Defect Qty\"},\"Name\":\"select2\"}]},\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"legend\":[{\"properties\":{\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"dataPoint\":[],\"lineStyles\":[{\"properties\":{\"lineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"'solid'\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Date\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"'2014'\"}}}}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 212.68,
+          "width": 452.92,
+          "x": 481.73,
+          "y": 15.51,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":33.42136854741897,\"y\":80.86153846153846,\"z\":5000,\"width\":389.53181272509005,\"height\":171.69230769230768}}],\"singleVisual\":{\"visualType\":\"table\",\"projections\":{\"Values\":[{\"queryRef\":\"select\"},{\"queryRef\":\"select1\"},{\"queryRef\":\"select2\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Category\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Category\"},\"Name\":\"select\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"_Total Defect Qty Status\"},\"Name\":\"select1\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Defect Qty\"},\"Name\":\"select2\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"_Total Defect Qty Status\"}}}]},\"objects\":{\"general\":[{\"properties\":{\"totals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}},{\"properties\":{\"columnWidth\":{\"expr\":{\"Literal\":{\"Value\":\"88D\"}}}},\"selector\":{\"metadata\":\"select1\"}},{\"properties\":{\"columnWidth\":{\"expr\":{\"Literal\":{\"Value\":\"76D\"}}}},\"selector\":{\"metadata\":\"select2\"}}],\"columnHeaders\":[{\"properties\":{\"wordWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "height": 171.69,
+          "width": 389.53,
+          "x": 33.42,
+          "y": 80.86,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":822.8571428571429,\"y\":679.0153846153846,\"z\":6000,\"width\":135.9903961584634,\"height\":39.87692307692308}}],\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"obviEnce llc ©\",\"textStyle\":{\"fontFamily\":\"Lucida Sans Unicode\",\"fontSize\":\"8pt\",\"fontStyle\":\"normal\",\"fontWeight\":\"normal\"}}],\"horizontalTextAlignment\":\"right\"}]}}]}}}",
+          "height": 39.88,
+          "width": 135.99,
+          "x": 822.86,
+          "y": 679.02,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":39.183673469387756,\"y\":286.89230769230767,\"z\":0,\"width\":100.26410564225691,\"height\":184.98461538461538}}],\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Double-tap the bubbles to drill down. To drill up, right-click the chart and tap the up arrow.\",\"textStyle\":{\"fontSize\":\"9pt\"}}]}]}}]}}}",
+          "height": 184.98,
+          "width": 100.26,
+          "x": 39.18,
+          "y": 286.89,
+          "z": 0.00
+        }
+      ],
+      "width": 960.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Downtime Analysis",
+      "displayOption": 0,
+      "filters": "[{\"name\":\"Filter\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Material Type\"}},\"Property\":\"Material Type\"}},\"type\":\"Categorical\",\"howCreated\":1,\"isLinkedAsAggregation\":false},{\"name\":\"Filter1\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Plant\"}},\"Property\":\"Plant\"}},\"type\":\"Categorical\",\"howCreated\":1,\"isLinkedAsAggregation\":false},{\"name\":\"Filter2\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Vendor\"}},\"Property\":\"Vendor\"}},\"type\":\"Categorical\",\"howCreated\":1,\"isLinkedAsAggregation\":false},{\"name\":\"Filter3\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Defect Type\"}},\"Property\":\"Defect Type\"}},\"type\":\"Categorical\",\"howCreated\":1,\"isLinkedAsAggregation\":false},{\"name\":\"Filter4\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Date\"}},\"Property\":\"Year\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d1\",\"Entity\":\"Date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"'2014'\"}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"isLinkedAsAggregation\":false}]",
+      "height": 720.00,
+      "name": "ReportSection3",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"VisualContainer\",\"layouts\":[{\"id\":0,\"position\":{\"x\":25.354141656662666,\"y\":13.292307692307691,\"z\":0,\"width\":387.2268907563025,\"height\":68.67692307692307}}],\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Downtime Analysis\",\"textStyle\":{\"fontFamily\":\"Heading\",\"fontSize\":\"28pt\",\"fontStyle\":\"normal\",\"fontWeight\":\"normal\"}}]}]}}]}}}",
+          "height": 68.68,
+          "width": 387.23,
+          "x": 25.35,
+          "y": 13.29,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":87,\"z\":1000,\"width\":155,\"height\":67}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"select\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Defect Qty\"},\"Name\":\"select\"}]}}}",
+          "height": 67.00,
+          "width": 155.00,
+          "x": 24.00,
+          "y": 87.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":203,\"y\":87,\"z\":2000,\"width\":181,\"height\":64}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"select\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Downtime Minutes\"},\"Name\":\"select\"}]}}}",
+          "height": 64.00,
+          "width": 181.00,
+          "x": 203.00,
+          "y": 87.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":457.0114942528736,\"y\":20.032733224222586,\"z\":3000,\"width\":488.2758620689656,\"height\":373.5515548281506}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"select\",\"active\":true}],\"Series\":[{\"queryRef\":\"select1\"}],\"Y\":[{\"queryRef\":\"select2\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Vendor\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Category\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Vendor\"},\"Name\":\"select\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Category\"},\"Name\":\"select1\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Downtime Minutes\"},\"Name\":\"select2\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Downtime Minutes\"}}}]},\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}},\"concatenateLabels\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"legend\":[{\"properties\":{\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"dataPoint\":[]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "height": 373.55,
+          "width": 488.28,
+          "x": 457.01,
+          "y": 20.03,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":25.74712643678161,\"y\":168.51063829787233,\"z\":4000,\"width\":438.62068965517244,\"height\":218.00327332242227}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"select\",\"active\":true}],\"Y\":[{\"queryRef\":\"select1\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Material Type\",\"Type\":0},{\"Name\":\"m1\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Material Type\"},\"Name\":\"select\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m1\"}},\"Property\":\"Total Downtime Minutes\"},\"Name\":\"select1\"}]},\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"legend\":[{\"properties\":{\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"dataPoint\":[]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "height": 218.00,
+          "width": 438.62,
+          "x": 25.75,
+          "y": 168.51,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":25.74712643678161,\"y\":420.6873977086743,\"z\":5000,\"width\":439.5402298850575,\"height\":262.7823240589198}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"select\",\"active\":true}],\"Y\":[{\"queryRef\":\"select1\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Material Type\",\"Type\":0},{\"Name\":\"m1\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Material Type\"},\"Name\":\"select\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m1\"}},\"Property\":\"Total Defect Qty\"},\"Name\":\"select1\"}]},\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"legend\":[{\"properties\":{\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "height": 262.78,
+          "width": 439.54,
+          "x": 25.75,
+          "y": 420.69,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":466.2068965517242,\"y\":411.2602291325696,\"z\":6000,\"width\":474.4827586206897,\"height\":272.20949263502456}}],\"singleVisual\":{\"visualType\":\"map\",\"projections\":{\"Category\":[{\"queryRef\":\"select\",\"active\":true}],\"Size\":[{\"queryRef\":\"select1\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Plant\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Plant\"},\"Name\":\"select\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Downtime Minutes\"},\"Name\":\"select1\"}]},\"objects\":{\"legend\":[{\"properties\":{\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "height": 272.21,
+          "width": 474.48,
+          "x": 466.21,
+          "y": 411.26,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":822.9885057471265,\"y\":681.1129296235679,\"z\":7000,\"width\":136.09195402298852,\"height\":37.708674304418984}}],\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"obviEnce llc ©\",\"textStyle\":{\"fontFamily\":\"Lucida Sans Unicode\",\"fontSize\":\"8pt\",\"fontStyle\":\"normal\",\"fontWeight\":\"normal\"}}],\"horizontalTextAlignment\":\"right\"}]}}]}}}",
+          "height": 37.71,
+          "width": 136.09,
+          "x": 822.99,
+          "y": 681.11,
+          "z": 7000.00
+        }
+      ],
+      "width": 960.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Duplicate of Info",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection4",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"VisualContainer\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.743405275779375,\"y\":19.952038369304557,\"z\":0,\"width\":1266.1870503597122,\"height\":698.5131894484412}}],\"singleVisual\":{\"visualType\":\"image\",\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"power-bi-obvience-splash19119879230856895.png\"}}}}}]}}}",
+          "height": 698.51,
+          "width": 1266.19,
+          "x": 10.74,
+          "y": 19.95,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"VisualContainer1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":72.66375545851528,\"y\":252.92576419213975,\"z\":1000,\"width\":300.4366812227074,\"height\":46.11353711790393}}],\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"http://obvience.com\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"13.5pt\",\"textDecoration\":\"underline\",\"color\":\"#01b8aa\"},\"url\":\"http://obvience.com\"}]}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#000000'\"}}}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}}}",
+          "height": 46.11,
+          "width": 300.44,
+          "x": 72.66,
+          "y": 252.93,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

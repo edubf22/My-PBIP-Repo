@@ -1,0 +1,1347 @@
+{
+  "compatibilityLevel": 1550,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.122.1066.0 (23.10)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Defect Type\",\"Defect\",\"Material Type\",\"Metrics\",\"Plant\",\"Category\",\"Vendor\",\"Date\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "DynamicImprovement": "HighConfidence",
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "a3cc6331-e107-4df4-8979-e32de4a132e2",
+        "fromColumn": "Sub Category ID",
+        "fromTable": "Metrics",
+        "toColumn": "Sub Category ID",
+        "toTable": "Category"
+      },
+      {
+        "name": "ec5a438d-6c50-45c8-abc8-4a3562da2138",
+        "fromColumn": "Plant ID",
+        "fromTable": "Metrics",
+        "toColumn": "Plant ID",
+        "toTable": "Plant"
+      },
+      {
+        "name": "0807c690-2e70-4eaf-b22e-be0a8d516408",
+        "fromColumn": "Vendor ID",
+        "fromTable": "Metrics",
+        "toColumn": "Vendor ID",
+        "toTable": "Vendor"
+      },
+      {
+        "name": "28902246-6430-4b56-a188-fbb693145d7b",
+        "fromColumn": "Defect Type ID",
+        "fromTable": "Metrics",
+        "toColumn": "Defect Type ID",
+        "toTable": "Defect Type"
+      },
+      {
+        "name": "d4f84bf1-f924-4a24-b927-3614238a65ec",
+        "fromColumn": "Material Type ID",
+        "fromTable": "Metrics",
+        "toColumn": "Material Type ID",
+        "toTable": "Material Type"
+      },
+      {
+        "name": "69bde547-5483-4e76-ab8c-3396f7ea3c95",
+        "fromColumn": "Defect ID",
+        "fromTable": "Metrics",
+        "toColumn": "Defect ID",
+        "toTable": "Defect"
+      },
+      {
+        "name": "8c75955b-5848-4576-8794-7773746a224f",
+        "fromColumn": "Date",
+        "fromTable": "Metrics",
+        "toColumn": "Date",
+        "toTable": "Date"
+      },
+      {
+        "name": "19508a89-089c-4055-9dab-43d489a4ccda",
+        "fromColumn": "Date",
+        "fromTable": "Date",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_8d496f27-d102-4ce8-aa94-32e3d194e0e4"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "Defect Type",
+        "columns": [
+          {
+            "name": "Defect Type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d23dfe1a-db33-47b4-9654-058e5a09a74f",
+            "sortByColumn": "Sort",
+            "sourceColumn": "Defect Type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Defect Type ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "10c3d0ac-59b4-453e-b126-3d316526d035",
+            "sourceColumn": "Defect Type ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Sort",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "c4046eaf-f488-4325-977d-d94bdaba1a63",
+            "sourceColumn": "Sort",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "4f2c49f7-94cc-4de8-8613-ed0db08aa841",
+        "partitions": [
+          {
+            "name": "Defect Type",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mad\\Dropbox\\Work\\Obvience\\IP\\Supplier Quality\\Data\\New\\SupplierQualityObfuscated.xlsx\"), null, true),",
+                "    Sheet = Source{[Item=\"Defect Type\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Promoted Headers\", {{\"Defect Type\", \"Defect Type\"}, {\"Defect Type ID\", \"Defect Type ID\"}, {\"Sort\", \"Sort\"}}),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Renamed Columns\", {{\"Defect Type\", type text}, {\"Defect Type ID\", type number}, {\"Sort\", type number}})",
+                " in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Defect",
+        "columns": [
+          {
+            "name": "Defect",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e4491110-5a18-4685-a845-33600479349f",
+            "sourceColumn": "Defect",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Defect ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "3e21ce00-e07d-43ab-93c2-6b64022d8da9",
+            "sourceColumn": "Defect ID",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "315c312e-8fdf-4320-be3d-4c174c44842d",
+        "partitions": [
+          {
+            "name": "Defect",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mad\\Dropbox\\Work\\Obvience\\IP\\Supplier Quality\\Data\\New\\SupplierQualityObfuscated.xlsx\"), null, true),",
+                "    Sheet = Source{[Item=\"Defect\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Promoted Headers\", {{\"Defect\", \"Defect\"}, {\"Defect ID\", \"Defect ID\"}}),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Renamed Columns\", {{\"Defect\", type text}, {\"Defect ID\", type number}})",
+                " in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Material Type",
+        "columns": [
+          {
+            "name": "Material Type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8f1dc524-f826-42e2-ba1a-8ec294866438",
+            "sourceColumn": "Material Type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Material Type ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "e2ba17fc-9bfd-4907-910f-18f07ed684ac",
+            "sourceColumn": "Material Type ID",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "1f0776ef-5339-425c-835b-dacaf3f8486a",
+        "partitions": [
+          {
+            "name": "Material Type",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mad\\Dropbox\\Work\\Obvience\\IP\\Supplier Quality\\Data\\New\\SupplierQualityObfuscated.xlsx\"), null, true),",
+                "    Sheet = Source{[Item=\"Material Type\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Promoted Headers\", {{\"Material Type\", \"Material Type\"}, {\"Material Type ID\", \"Material Type ID\"}}),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Renamed Columns\", {{\"Material Type\", type text}, {\"Material Type ID\", type number}})",
+                " in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Metrics",
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataCategory": "Date",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "8455a2cf-e23d-41c9-a02e-adbb61281fba",
+            "sourceColumn": "Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Sub Category ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "da4991fb-f439-469e-9612-d8660f60d473",
+            "sourceColumn": "Sub Category ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Plant ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "f4a3c5c8-f6e6-49fb-99ea-1851ca773ac3",
+            "sourceColumn": "Plant ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Vendor ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "231a91a2-8115-40ab-8b8a-bfbebc1171c8",
+            "sourceColumn": "Vendor ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Material ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "c1153f85-1903-43d0-bac8-ed651f9e7401",
+            "sourceColumn": "Material ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "Defect Type ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "1fcdaef0-005b-46f2-960e-c7e473fc52fb",
+            "sourceColumn": "Defect Type ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Material Type ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "c585a83e-f747-45ea-9556-d582fe23e2d7",
+            "sourceColumn": "Material Type ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Defect ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "4061939b-5cb7-44f4-8e45-365b48f33ec3",
+            "sourceColumn": "Defect ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Defect Qty",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "453e1a46-fd09-49d8-a8e5-55663ffe062e",
+            "sourceColumn": "Defect Qty",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Downtime min",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "1d812e8a-581e-456e-aa12-d19749177bd0",
+            "sourceColumn": "Downtime min",
+            "summarizeBy": "sum"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "cbace891-55b6-4047-bd9b-775adb6b347f",
+        "measures": [
+          {
+            "name": "Total Defect Reports",
+            "expression": "COUNTROWS(Metrics)",
+            "formatString": "#,0",
+            "lineageTag": "03c3b369-c24f-4483-b443-1a167abdb5b7"
+          },
+          {
+            "name": "Defect Qty SPLY",
+            "expression": "CALCULATE([Total Defect Qty], SAMEPERIODLASTYEAR('Date'[Date]))",
+            "formatString": "#,0",
+            "lineageTag": "8eae06aa-6add-4129-a4cf-21fc5956ef45"
+          },
+          {
+            "name": "Total Downtime Minutes SPLY",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([Total Downtime Minutes], SAMEPERIODLASTYEAR('Date'[Date]))",
+            "lineageTag": "25c78564-4f66-4df2-bc63-c02f8b2c2811"
+          },
+          {
+            "name": "Total Defect Qty Max",
+            "expression": "[Total Defect Qty]*1.25",
+            "formatString": "#,0",
+            "lineageTag": "79811a4c-2d4e-44af-8c45-f0117e6e12ff"
+          },
+          {
+            "name": "Total Downtime Minutes Max",
+            "expression": "[Total Downtime Minutes]*1.15",
+            "formatString": "#,0",
+            "lineageTag": "bbdb5897-5eed-409b-a1a4-a4d35d2ec5f5"
+          },
+          {
+            "name": "Total Defect Qty",
+            "expression": "SUM([Defect Qty])",
+            "formatString": "#,0",
+            "kpi": {
+              "annotations": [
+                {
+                  "name": "GoalType",
+                  "value": "Measure"
+                },
+                {
+                  "name": "KpiStatusType",
+                  "value": "LinearReversed"
+                },
+                {
+                  "name": "KpiThresholdType",
+                  "value": "Percentage"
+                },
+                {
+                  "name": "KpiThresholdOrdering",
+                  "value": "Ascending"
+                },
+                {
+                  "name": "KpiThresholdCount",
+                  "value": "2"
+                },
+                {
+                  "name": "KpiThreshold_0",
+                  "value": "90"
+                },
+                {
+                  "name": "KpiThreshold_1",
+                  "value": "100"
+                }
+              ],
+              "statusExpression": [
+                "var x='Metrics'[Total Defect Qty]/'Metrics'[_Total Defect Qty Goal] return",
+                "if(ISBLANK(x),BLANK(),",
+                "        If(x<0.9,1,",
+                "\t    If(x<1,0,-1)",
+                "    )",
+                ")",
+                ""
+              ],
+              "statusGraphic": "Traffic Light - Single",
+              "targetExpression": "'Metrics'[Defect Qty SPLY]",
+              "targetFormatString": "#,0"
+            },
+            "lineageTag": "fffa4c16-9f20-4e14-86ca-202987c22576"
+          },
+          {
+            "name": "Total Downtime Minutes",
+            "expression": "SUM([Downtime min])",
+            "formatString": "#,0",
+            "kpi": {
+              "annotations": [
+                {
+                  "name": "GoalType",
+                  "value": "Measure"
+                },
+                {
+                  "name": "KpiStatusType",
+                  "value": "LinearReversed"
+                },
+                {
+                  "name": "KpiThresholdType",
+                  "value": "Percentage"
+                },
+                {
+                  "name": "KpiThresholdOrdering",
+                  "value": "Ascending"
+                },
+                {
+                  "name": "KpiThresholdCount",
+                  "value": "2"
+                },
+                {
+                  "name": "KpiThreshold_0",
+                  "value": "90"
+                },
+                {
+                  "name": "KpiThreshold_1",
+                  "value": "100"
+                }
+              ],
+              "statusExpression": [
+                "var x='Metrics'[Total Downtime Minutes]/'Metrics'[_Total Downtime Minutes Goal] return",
+                "if(ISBLANK(x),BLANK(),",
+                "        If(x<0.9,1,",
+                "\t    If(x<1,0,-1)",
+                "    )",
+                ")",
+                ""
+              ],
+              "statusGraphic": "Traffic Light - Single",
+              "targetExpression": "'Metrics'[Total Downtime Minutes SPLY]",
+              "targetFormatString": "#,0"
+            },
+            "lineageTag": "dd1f838c-7d32-4d1b-ad9b-fb4efa040680"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Metrics",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mad\\Dropbox\\Work\\Obvience\\IP\\Supplier Quality\\Data\\New\\SupplierQualityObfuscated.xlsx\"), null, true),",
+                "    Sheet = Source{[Item=\"Metrics\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Promoted Headers\", {{\"Date\", \"Date\"}, {\"Sub Category ID\", \"Sub Category ID\"}, {\"Plant ID\", \"Plant ID\"}, {\"Vendor ID\", \"Vendor ID\"}, {\"Material ID\", \"Material ID\"}, {\"Defect Type ID\", \"Defect Type ID\"}, {\"Material Type ID\", \"Material Type ID\"}, {\"Defect ID\", \"Defect ID\"}, {\"Defect Qty\", \"Defect Qty\"}, {\"Downtime (min)\", \"Downtime min\"}}),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Renamed Columns\", {{\"Date\", type datetime}, {\"Sub Category ID\", type number}, {\"Plant ID\", type number}, {\"Vendor ID\", type number}, {\"Material ID\", type number}, {\"Defect Type ID\", type number}, {\"Material Type ID\", type number}, {\"Defect ID\", type number}, {\"Defect Qty\", type number}, {\"Downtime min\", type number}})",
+                " in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Plant",
+        "columns": [
+          {
+            "name": "Plant",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataCategory": "City",
+            "dataType": "string",
+            "lineageTag": "a19ae2ba-02f5-4100-abfc-2be2f4a754b2",
+            "sourceColumn": "Plant",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Plant ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "bf4e282b-5ad6-45f3-8d03-25f96fb979e0",
+            "sourceColumn": "Plant ID",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "84ff4107-88fa-4ad9-bc32-5e229168e364",
+        "partitions": [
+          {
+            "name": "Plant",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mad\\Dropbox\\Work\\Obvience\\IP\\Supplier Quality\\Data\\New\\SupplierQualityObfuscated.xlsx\"), null, true),",
+                "    Sheet = Source{[Item=\"Plant\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Promoted Headers\", {{\"Plant\", \"Plant\"}, {\"Plant ID\", \"Plant ID\"}}),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Renamed Columns\", {{\"Plant\", type text}, {\"Plant ID\", type number}})",
+                " in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Category",
+        "columns": [
+          {
+            "name": "Sub Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "82d1166b-cede-4198-beb7-2476510bc89a",
+            "sourceColumn": "Sub Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Sub Category ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "12bc13ba-442b-4f2d-93e0-0c2ced7eeee1",
+            "sourceColumn": "Sub Category ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "[Sub Category]",
+            "isDataTypeInferred": true,
+            "lineageTag": "8d0d7271-234a-46f6-bb7b-dfb9bf33caab",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "cd514b1c-3a30-400b-8622-5166ff690d4f",
+        "partitions": [
+          {
+            "name": "Sub Category",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mad\\Dropbox\\Work\\Obvience\\IP\\Supplier Quality\\Data\\New\\SupplierQualityObfuscated.xlsx\"), null, true),",
+                "    Sheet = Source{[Item=\"Sub Category\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Promoted Headers\", {{\"Sub Category\", \"Sub Category\"}, {\"Sub Category ID\", \"Sub Category ID\"}}),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Renamed Columns\", {{\"Sub Category\", type text}, {\"Sub Category ID\", type number}})",
+                " in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Vendor",
+        "columns": [
+          {
+            "name": "Vendor",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "160775a5-beac-4241-8b9f-ed16ccc39756",
+            "sourceColumn": "Vendor",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Vendor ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "08d76d9f-9283-4e2c-8c60-2e8e17b9b6c3",
+            "sourceColumn": "Vendor ID",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "3f41021b-23d4-461f-8b8c-9ef8985a8ce4",
+        "partitions": [
+          {
+            "name": "Vendor",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mad\\Dropbox\\Work\\Obvience\\IP\\Supplier Quality\\Data\\New\\SupplierQualityObfuscated.xlsx\"), null, true),",
+                "    Sheet = Source{[Item=\"Vendor\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Promoted Headers\", {{\"Vendor\", \"Vendor\"}, {\"Vendor ID\", \"Vendor ID\"}}),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Renamed Columns\", {{\"Vendor\", type text}, {\"Vendor ID\", type number}})",
+                " in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Date",
+        "annotations": [
+          {
+            "name": "__PBI_LegacyCustomDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Year",
+            "dataType": "string",
+            "lineageTag": "ce8cd66c-d1ee-4969-9ff8-66b9d81270b6",
+            "sourceColumn": "Year",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MonthNumber",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "021a5007-ea58-43df-a296-0a8697addf2b",
+            "sourceColumn": "MonthNumber",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Week",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "7284b649-11ab-45be-abea-42dfa99ac035",
+            "sourceColumn": "Week",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isKey": true,
+            "lineageTag": "aab6fba5-32cc-4242-a44f-139a0be92a5e",
+            "sourceColumn": "Date",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Date Hierarchy",
+                  "table": "LocalDateTable_8d496f27-d102-4ce8-aa94-32e3d194e0e4"
+                },
+                "isDefault": true,
+                "relationship": "19508a89-089c-4055-9dab-43d489a4ccda"
+              }
+            ]
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMM\")",
+            "isDataTypeInferred": true,
+            "lineageTag": "3aab8986-62f1-47f2-92a8-e783bd14bb76",
+            "sortByColumn": "MonthNumber",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "dataCategory": "Time",
+        "lineageTag": "cddc9dbd-78f6-4d37-933c-9cc7dd742a49",
+        "partitions": [
+          {
+            "name": "Date",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mad\\Dropbox\\Work\\Obvience\\IP\\Supplier Quality\\Data\\New\\SupplierQualityObfuscated.xlsx\"), null, true),",
+                "    Sheet = Source{[Item=\"Date\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Promoted Headers\", {{\"Year\", \"Year\"}, {\"Month\", \"MonthNumber\"}, {\"Week\", \"Week\"}, {\"Date\", \"Date\"}}),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Renamed Columns\", {{\"Year\", type text}, {\"MonthNumber\", Int64.Type}, {\"Week\", Int64.Type}, {\"Date\", type datetime}})",
+                " in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DateTableTemplate_f2e4f67c-f8aa-4a08-93eb-bbcdc50b0513",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "060e1a9c-5be9-4bc9-b467-2f7ab57531b9",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "23b3b5b1-405f-46fc-aed6-b44dced3954f",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "3e142618-3c30-4341-b618-84dbf4307350",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "334f0584-8211-43ad-b64d-0ee35c7380f5",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "bb80f20e-c450-43ae-9e57-7488d96dd3ca",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "24cb98c1-c886-4a9a-a5d8-e8ca50d524e6",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "9a8122d9-6cde-4d58-b812-5aa701201149",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "6256fbba-8519-44ca-a308-2a54606d09d8",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "8b425dac-6023-40a5-8cf8-6019e3a7f6cb",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "0f243974-9d65-4fdd-986f-74c981c31bb1",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "a28748d4-45aa-41bb-b6a2-8fb54dd6018a",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "ac19a2c3-0986-4d2f-b60c-01731c32d648"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "83d2e62d-f0f3-49f9-a3f6-1dd4c4df0306",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_f2e4f67c-f8aa-4a08-93eb-bbcdc50b0513-82660f0d-830d-482e-841f-8eafa6c4c66b",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "LocalDateTable_8d496f27-d102-4ce8-aa94-32e3d194e0e4",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "8741202a-6167-453a-a0e7-6a31e1444b45",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "e4663e3f-2672-466c-93dc-898d60787d49",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "d76ae899-12f0-411c-beaa-5b4f5d2dfc0a",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "acc71627-ac88-4186-92b9-05c2a4eba172",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "c9845c0b-45a2-452f-b325-0c60ffdf63e4",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "1d2e80bc-68e5-4179-825f-8fe58e374bc8",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "d11f535c-9032-4d2e-af53-4b3b9700baeb",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "5a1c5fb8-fd3c-4df5-9974-1a08036abb5a",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "6c05c831-709f-480a-a842-0d0f99961e15",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "07b0182c-1831-48a8-bc56-01bd9976e80f",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "002c74f4-8bff-4b9f-9dd4-d62d917a99db",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "335ef71f-2d3c-444b-8bcd-4c12a9900175"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "619ce668-3994-43fe-a47b-84470b7c85ea",
+        "partitions": [
+          {
+            "name": "LocalDateTable_8d496f27-d102-4ce8-aa94-32e3d194e0e4-dc2aff4d-169c-4849-9a96-c187e819ae88",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('Date'[Date])), 1, 1), Date(Year(MAX('Date'[Date])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      }
+    ]
+  }
+}
